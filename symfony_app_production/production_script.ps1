@@ -12,7 +12,7 @@ $projectFolder = 'app-prod'
 # 1 - clone the repository (the remote repository must be up to date)
 $accessToken = (Get-Content "$originalLocation\.env" -Raw) -match 'GITHUB_ACCESS_TOKEN=(.+)'; $accessToken = $matches[1].Trim()
 $repositoryName = (Get-Content "$originalLocation\.env" -Raw) -match 'GITHUB_REPOSITORY_NAME=(.+)'; $repositoryName = $matches[1].Trim()
-git clone "https://$accessToken@github.com/BouiMust/$repositoryName.git" $projectFolder
+git clone "https://$accessToken@github.com/Boudev-m/$repositoryName.git" $projectFolder
 
 # 2 - Copy the .env.local.php file
 Copy-Item $originalLocation\.env.local.php .\$projectFolder\backend\
